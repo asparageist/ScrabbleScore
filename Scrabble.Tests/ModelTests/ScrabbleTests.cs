@@ -9,8 +9,12 @@ namespace Scrabble.Tests
   public class ScoreCheckerTests
   {
     [TestMethod]
-    public void ScoreChecker_ForOnePoint()
+    public void CalculateScore_EmptyString()
     {
+      ScoreChecker checker = new ScoreChecker();
+
+      int score = ScoreChecker.CalculateScore("");
+      Assert.AreEqual("", score);
     }
   }
 }
