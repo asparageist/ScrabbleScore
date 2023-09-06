@@ -11,10 +11,41 @@ namespace Scrabble.Tests
     [TestMethod]
     public void CalculateScore_EmptyString()
     {
+
+      //Arrange
       ScoreChecker checker = new ScoreChecker();
 
-      int score = ScoreChecker.CalculateScore("");
-      Assert.AreEqual("", score);
+      //Act
+      int score = checker.CalculateScore("");
+
+      //Assert
+      Assert.AreEqual(0, score);
     }
+
+    [TestMethod]
+    public void CalculateScore_CheckValues()
+    {
+
+      //Arrange
+      ScoreChecker checker = new ScoreChecker();
+      //Act
+      int score = checker.CalculateScore("accounting");
+      //Assert
+      Assert.AreEqual(15, score);
+
+    }
+
+    // [TestMethod]
+    // public void CalculateScore_CheckIncorrectValues()
+    // {
+
+    //   //Arrange
+    //   ScoreChecker checker = new ScoreChecker();
+    //   //Act
+    //   int score = checker.CalculateScore("accounting");
+    //   //Assert
+    //   Assert.AreEqual(17, score);
+
+    // }
   }
 }
